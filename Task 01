@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(cricket4.jpg.jpg);/* Replace 'background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .showcase{
+    background-image: url(cricket4.jpg.jpg);
+    opacity: 0.5;
+    width: auto;
+    height: auto;
+    background-position: center;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#222;
+    padding: 10px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    text-align: right;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 25px;
+    transition: color 0.3s ease;
+  }
+
+  .highlighted {
+    color:#ffffff
+    ;
+  }
+
+  .highlighted:hover {
+    color: #000000;
+  }
+
+  .scrolled {
+    background-color: #fff
+  }
+
+  .content {
+    margin-top: 50px; /* Adjust according to the height of the navigation bar */
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+  }
+  .content p{
+    font-weight: bold;
+    color: #fff1f1;
+  }
+
+  .help {
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .help h1 {
+    color: #000000;
+    font-weight: bold;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+</style>
+</head>
+<body>
+ 
+    <header>
+<nav id="navbar">
+<ul>
+    <li><a href="#home" class="highlighted">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
+<div id="home" class="content">
+  <h1>Welcome to our Cricket Store</h1>
+  <p> we're passionate about cricket and dedicated to providing cricket enthusiasts of all ages and skill levels with the finest gear and equipment to elevate their game. Whether you're a seasoned professional, an aspiring player, or just starting your cricketing journey, we've got you covered.Step into our virtual aisles and discover a comprehensive selection of top-quality cricket equipment, apparel, and accessories from leading brands around the globe. From premium cricket bats crafted for power and precision to protective gear designed for safety and comfort, we offer everything you need to excel on the pitch.Our team of cricket aficionados is here to offer expert advice, personalized recommendations, and unparalleled customer service. Whether you need assistance with selecting the right bat size, fitting protective gear, or understanding the latest cricket trends, we're committed to ensuring your satisfaction every step of the way.
+  </p>
+  <p><a href="#about">Go to About</a></p>
+</div>
+
+<div id="about" class="content">
+  <h1>About Us</h1>
+  <p>A cricket store is a retail establishment specializing in equipment, apparel, and accessories related to the sport of cricket. These stores cater to cricket players of all levels, from beginners to professionals, providing them with a wide range of cricket gear necessary for playing the game.
+    Typically, a cricket store would stock items such as cricket bats, cricket balls, protective gear (such as helmets, pads, gloves), cricket clothing (including jerseys, trousers, and shoes), as well as accessories like bags, grips, and cricket training aids.Cricket stores often carry products from various brands, ranging from well-known international brands to local manufacturers. They may also offer services such as cricket bat knocking,which involves preparing a new cricket bat for use by compressing the fibers within the bat.In addition to physical brick-and-mortar stores, many cricket stores also operate online platforms, allowing customers to browse and purchase cricket equipment conveniently from their homes. These online stores often offer shipping services, making it easier for customers to access cricket gear regardless of their location.</p>
+    <p><a href="#services">Go to Services</a></p>
+</div>
+
+<div id="services" class="content">
+  <h1>Our Services</h1>
+  <p> we're dedicated to providing comprehensive services to cater to all your cricketing needs. Whether you're a seasoned player looking to enhance your performance or a beginner seeking guidance, our range of services is designed to support you every step of the way.Explore our extensive selection of top-quality cricket equipment, apparel, and accessories. From premium cricket bats and balls to protective gear, clothing, and training aids, we offer a wide range of products to suit players of all ages and skill levels.Join us for community events, workshops, and seminars designed to bring cricket enthusiasts together. Whether you're looking to learn new skills, meet like-minded individuals, or simply celebrate the sport, our community events offer something for everyone.
+At [Store Name], our goal is to provide you with the highest level of service and support to help you enjoy the game of cricket to the fullest. Visit us today to experience the difference!</p>
+  <p><a href="#contact">Go to Contact</a></p>
+</div>
+
+<div id="contact" class="help">
+  <h1>Contact Us</h1>
+  <p>We're here to assist you with all your cricketing needs. Whether you have questions about our products, need assistance with an order, or simply want to provide feedback, we're just a message away.Our dedicated customer support team is available to assist you with any inquiries or concerns you may have. Feel free to reach out to us via phone or email during our business hours.Stay connected with us on social media for the latest updates, promotions, and cricketing news. Follow us on Insert Social Media Platforms to join our community and engage with fellow cricket enthusiasts.
+   <center>Phone: 625531</center>
+   <center>Email: cricshop@gmail.com</center></p>
+</div>
+<script>
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    var navbar = document.getElementById("navbar");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  }
+  
+  var menuItems = document.querySelectorAll('nav ul li a');
+  menuItems.forEach(function(item) {
+    item.addEventListener('mouseover', function() {
+      menuItems.forEach(function(link) {
+        link.classList.remove('highlighted');
+      });
+      this.classList.add('highlighted');
+    });
+  });
+</script>
+</body>
+</html>
